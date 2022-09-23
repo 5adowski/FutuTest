@@ -20,7 +20,6 @@ public class CampaignController {
     public List<Campaign> getAll(){
         return campaignService.readAll();
     }
-
     @GetMapping("/campaign/{id}")
     public Campaign get(@PathVariable Long id){
         return campaignService.read(id);
@@ -33,6 +32,4 @@ public class CampaignController {
         campaignService.create(campaign);
         return ResponseEntity.created(URI.create("/")).body(campaign);
     }
-
-
 }
